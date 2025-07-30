@@ -1,0 +1,39 @@
+<?nsuri ktp?>
+<?render-egx ktp.egx?>
+<project duration="36">
+	<stage title="Induction, Training and Project Work Plan">
+		<task title="Company induction" dur="0.2" location="Company">
+			<desc>Introduction to the business, technology, teams and site tour, health and safety briefing.</desc>
+			<outcome desc="Associate gains appreciation for the industry and gains key contacts for developing exposure to technology as well as commercial aspects."/>
+		</task>
+		<task title="Knowledge base induction" dur="0.1" location="KB">
+			<desc>University induction activities (orientation, meeting group members, IT/equipment setup, health and safety).</desc>
+			<outcome desc="Associate becomes familiar with the IT infrastructure, health and safety procedures and other members of the research group at the knowledge base."/>
+		</task>
+		<task title="Associate holidays" dur="4" location="Somewhere nice" holidays="true">
+			<output desc=""/>
+		</task>
+	</stage>
+	<stage title="Initial Stage">
+		<desc>Initial stage of the project.</desc>
+		<task title="First task" dur="0.2">
+			<desc>Some important work.</desc>
+			<deliverable title="An important deliverable"/>
+		</task>
+	</stage>
+	<stage title="Final stage">
+		<desc>Final stage of the project.</desc>
+		<task title="Preparation of the final report" dur="0.2">
+			<deliverable title="Final Report"/>
+		</task>
+	</stage>
+	
+	<risk title="Failure to recruit qualified Associate" impact="5" prob="2">
+		<desc>Failing to recruit a qualified Associate will prevent the project from starting.</desc>
+		<mit>The position will be advertised publicly and broadly with a focus on relevant communities of practitioners and researchers.</mit>
+	</risk>
+	<risk title="Loss of key personnel" impact="4" prob="2">
+		<desc>Losing a key member of the company/knowledge base team can have an adverse impact on the continuity of the project.</desc>
+		<mit>Several members of staff will be involved in the project from the knowledge base and the company to mitigate this risk.</mit>
+	</risk>
+</project>

@@ -1,0 +1,40 @@
+@cached
+operation Task getStart() {
+	
+	if (self.holidays) return 0;
+
+	var tasks = Task.all.excludingAll(Task.all.select(t|t.holidays));
+	if (tasks.indexOf(self) == 0) {
+		return 0;
+	}
+	else {
+		return tasks.get(tasks.indexOf(self) - 1).getEnd();
+	}
+	
+}
+
+@cached
+operation Task getDuration() {
+	var holidays = Task.all.selectOne(t|t.holidays);
+	if (holidays.isDefined()) {
+		return (project.duration * self.duration) /
+			(project.duration - holidays.duration);
+	}
+	else {
+		return self.duration;
+	}
+}
+
+@cached
+operation Task getEnd() {
+	if (self.holidays) return project.duration;
+	
+	return self.getStart() + self.getDuration();
+}
+
+operation Any link(text : String) {
+	// return text;
+	return "<a href=\"javascript:top.showElement('" + 
+		self.eResource().getURIFragment(self) + "', '" + 
+		self.eResource().uri + "')\">" + text + "</a>";
+}

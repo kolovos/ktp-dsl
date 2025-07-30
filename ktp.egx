@@ -1,0 +1,19 @@
+rule KTP2WorkPlan {
+
+	template : "workplan.egl"
+
+	parameters : Map{
+		"path" = Sequence{"Work Plan"},
+		"format" = "HTML"
+	}
+}
+
+rule KTP2Summary {
+
+	template : "summary.egl"
+
+	parameters : Map{
+		"path" = Sequence{"Summary"},
+		"format" = "HTML"
+	}
+}

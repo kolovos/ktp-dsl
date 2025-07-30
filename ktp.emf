@@ -1,0 +1,46 @@
+package ktp;
+
+class Project {
+	attr String title;
+	attr int duration;
+	val Stage[*] stages;
+	val Risk[*] risks;
+}
+
+class Stage {
+	attr String title;
+	attr String description;
+	val Task[*] tasks;
+}
+
+class Task {
+	attr String title;
+	attr String description;
+	attr Decimal duration;
+	val Output[*] outputs;
+	attr String location = "BP";
+	attr boolean holidays = false;
+}
+
+class Output {
+	attr String description;
+}
+
+class Deliverable extends Output {
+	attr String title;
+}
+
+class DecisionPoint extends Output {
+	attr String title;
+}
+
+class Risk {
+	attr String title;
+	attr String description;
+	attr int impact;
+	attr int probability;
+	attr String mitigation;
+	attr String owner = "BP and KB";
+}
+
+datatype Decimal : java.math.BigDecimal;
